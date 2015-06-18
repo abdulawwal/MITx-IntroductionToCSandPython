@@ -16,7 +16,7 @@
 
 count = 0
 vowelSet = ['a', 'e', 'i', 'o', 'u']
-s = 'azcbobobegghakl'
+# s = 'azcbobobegghakl'
 for ch in s:
     for vo in vowelSet:
         if ch == vo:
