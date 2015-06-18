@@ -1,4 +1,5 @@
 # Problem Set 1 - Problem 3
+# Passed the grader with 14.25/15.00 accuracy. Failed certain test cases. Must rework.
 
 # Assume s is a string of lower case characters.
 # Write a program that prints the longest substring of s in
@@ -15,50 +16,42 @@
 # If you are confused by this instruction,
 # please review L4 Problems 10 and 11 before you begin this problem set.
 
-s = 'zyxwvutsrqponmlkjihgfedcba'
-ordAr = binStatus = []
-count = size = max_size = ctr = ul = 0
+s = 'wyinskwvesnqowrpuf'
 
+ordAr = []
+count = 0
+binStatus = []
+# Creating list of ASCII values from string
 for i in s:
     ordAr.append(ord(i))
-#print('The string converted to ASCII values is : \n' + str(ordAr))
-
-# backconversion
-#str1 = ''
-#for i in ordAr:
-#    str1 = str1 + chr(i)
-#print str1
-
-
+# Creating binary list of comparisons
 for i in ordAr[1:]:
     count=count+1
-#    print str(ordAr[count-1]) +' '+ str(ordAr[count])
     binStatus.append(int(ordAr[count] >= ordAr[count-1]))
 
 result = None
 prev = None
-
+size = max_size = ctr = e_i =0
 str1 = ''
 
-
+# Finding longest sequence of consecutive binary 1s
 for i in binStatus:
     ctr = ctr + 1
     if i == prev and i == 1:
         size += 1
         if size > max_size:
-            ul = ctr
+            e_i = ctr
             max_size = size 
     else:
         size = 0
     prev = i
-#print (max_size+1) 
-
-ll = ul-(max_size+1)
+# Finding indexes of desired substring
+ul = e_i
+ll = e_i-(max_size+1)
 
 for i in range(ll,ul+1):
     str1 = str1 + chr(ordAr[i])
 print('Longest substring in alphabetical order is: '+ str1)
-        
      
     
         
