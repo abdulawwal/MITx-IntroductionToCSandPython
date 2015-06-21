@@ -2,7 +2,7 @@
 
 annualInterestRate = 0.2
 minPay = 10
-t_balance = balance = 4773 
+t_balance = balance = 32000 
 
 while (t_balance > 0):
     i = 1
