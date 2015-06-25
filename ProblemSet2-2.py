@@ -2,7 +2,7 @@
 
 annualInterestRate = 0.2
 minPay = 10
-t_balance = balance = 32000 
+t_balance = balance = 4773
 
 while (t_balance > 0):
     i = 1
@@ -13,4 +13,5 @@ while (t_balance > 0):
         interest = annualInterestRate/12.0 * unpaidB
         t_balance = unpaidB + interest
         i += 1
+    print t_balance
 print('Lowest payment : ' + str(minPay))
